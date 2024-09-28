@@ -187,18 +187,22 @@ func evaluateAASA(result []byte, contentType []string, bundleIdentifier string, 
 	err := json.Unmarshal(result, &reqResp)
 	if err != nil {
 
-		if len(contentType) > 0 && contentType[0] == "application/pkcs7-mime" {
-			jsonTextb, err := pkcs7.Parse(result)
-			if err != nil {
-				formatErrors = append(formatErrors, fmt.Errorf("PKCS7 Parse Fail: \n%w", err)) //define this better
-				return output, formatErrors
-			}
+		if len(contentType) > 0 {
+			if contentType[0] == "application/pkcs7-mim" {
+				// XXX: this is probably outdated
+				// TODO: investigate when this content type is phased out or it's still in use
+				jsonTextb, err := pkcs7.Parse(result)
+				if err != nil {
+					formatErrors = append(formatErrors, fmt.Errorf("PKCS7 Parse Fail: \n%w", err)) //define this better
+					return output, formatErrors
+				}
 
-			jsonText := jsonTextb.Content
+				jsonText := jsonTextb.Content
 
-			err = json.Unmarshal(jsonText, &reqResp)
-		} else {
-			if err != nil {
+				// TODO: looks like all of the below code in this `if` block is superfluous.
+				// As the err object here is essentially never used.
+				err = json.Unmarshal(jsonText, &reqResp)
+			} else if contentType[0] == "application/json" {
 				prettyJSON, err := json.MarshalIndent(result, "", "    ")
 				if err != nil {
 					formatErrors = append(formatErrors, fmt.Errorf("ioutil.ReadAll failed to parse with error: \n%w", err)) //define this better
