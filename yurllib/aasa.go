@@ -208,9 +208,9 @@ func evaluateAASA(result []byte, contentType []string, bundleIdentifier string, 
 					formatErrors = append(formatErrors, fmt.Errorf("ioutil.ReadAll failed to parse with error: \n%w", err)) //define this better
 					return output, formatErrors
 				}
-				output = append(output, fmt.Sprintln("JSON Validation: Fail"))
+				formatErrors = append(formatErrors, fmt.Errorf("JSON Validation: Fail"))
 
-				output = append(output, fmt.Sprintf("%s\n", string(prettyJSON)))
+				formatErrors = append(formatErrors, fmt.Errorf("%s", string(prettyJSON)))
 
 				return output, formatErrors
 			}
@@ -248,7 +248,6 @@ func evaluateAASA(result []byte, contentType []string, bundleIdentifier string, 
 	}
 
 	return output, formatErrors
-
 }
 
 func verifyAASAJSONformat(content aasaFile) (bool, []error) {

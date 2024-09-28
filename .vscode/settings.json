@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["AASA", "assetlinks", "yurl", "yurllib"]
+  "cSpell.words": [
+    "AASA",
+    "applinks",
+    "assetlinks",
+    "yurl",
+    "yurllib"
+  ],
+  "prettier.tabWidth": 4
 }
