@@ -1,228 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>yURL: Universal Links / App Links Validator</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://img.icons8.com/metro/26/000000/link.png"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap"
-      rel="stylesheet"
-    />
-    <link href="../static/css/sanitize.css" rel="stylesheet" />
-    <link href="../static/css/main_v2.css" rel="stylesheet" />
-    <script
-      src="https://kit.fontawesome.com/8c05e09944.js"
-      crossorigin="anonymous"
-    ></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="Description"
-      content="yURL allows you to validate whether a URL is properly configured for Universal Links and App Links. This allows you to check if the apple-app-site-association and assetlinks.json on a website is properly formatted for deep links as defined by Apple and Google."
-    />
-    <script>
-      if (window.location.hostname === 'yurl.chayev.com') {
-        !(function () {
-          var analytics = (window.analytics = window.analytics || [])
-          if (!analytics.initialize)
-            if (analytics.invoked)
-              window.console &&
-                console.error &&
-                console.error('Segment snippet included twice.')
-            else {
-              analytics.invoked = !0
-              analytics.methods = [
-                'trackSubmit',
-                'trackClick',
-                'trackLink',
-                'trackForm',
-                'pageview',
-                'identify',
-                'reset',
-                'group',
-                'track',
-                'ready',
-                'alias',
-                'debug',
-                'page',
-                'once',
-                'off',
-                'on',
-                'addSourceMiddleware',
-                'addIntegrationMiddleware',
-                'setAnonymousId',
-                'addDestinationMiddleware',
-              ]
-              analytics.factory = function (e) {
-                return function () {
-                  var t = Array.prototype.slice.call(arguments)
-                  t.unshift(e)
-                  analytics.push(t)
-                  return analytics
-                }
-              }
-              for (var e = 0; e < analytics.methods.length; e++) {
-                var key = analytics.methods[e]
-                analytics[key] = analytics.factory(key)
-              }
-              analytics.load = function (key, e) {
-                var t = document.createElement('script')
-                t.type = 'text/javascript'
-                t.async = !0
-                t.src =
-                  'https://cdn.segment.com/analytics.js/v1/' +
-                  key +
-                  '/analytics.min.js'
-                var n = document.getElementsByTagName('script')[0]
-                n.parentNode.insertBefore(t, n)
-                analytics._loadOptions = e
-              }
-              analytics.SNIPPET_VERSION = '4.13.1'
-              analytics.load('3cHlWjwEGL7unR570GHLj6wQBQtbyLTk')
-              analytics.page()
+    <head>
+        <title>yURL: Universal Links / App Links Validator</title>
+        <link
+            rel="icon"
+            type="image/png"
+            href="https://img.icons8.com/metro/26/000000/link.png"
+            crossorigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap"
+            rel="stylesheet"
+        />
+        <link href="../static/css/sanitize.css" rel="stylesheet" />
+        <link href="../static/css/main_v2.css" rel="stylesheet" />
+        <script
+            src="https://kit.fontawesome.com/8c05e09944.js"
+            crossorigin="anonymous"
+        ></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="Description"
+            content="yURL allows you to validate whether a URL is properly configured for Universal Links and App Links. This allows you to check if the apple-app-site-association and assetlinks.json on a website is properly formatted for deep links as defined by Apple and Google."
+        />
+        <script>
+            if (window.location.hostname === "yurl.chayev.com") {
+                !(function () {
+                    var analytics = (window.analytics = window.analytics || []);
+                    if (!analytics.initialize)
+                        if (analytics.invoked)
+                            window.console &&
+                                console.error &&
+                                console.error(
+                                    "Segment snippet included twice."
+                                );
+                        else {
+                            analytics.invoked = !0;
+                            analytics.methods = [
+                                "trackSubmit",
+                                "trackClick",
+                                "trackLink",
+                                "trackForm",
+                                "pageview",
+                                "identify",
+                                "reset",
+                                "group",
+                                "track",
+                                "ready",
+                                "alias",
+                                "debug",
+                                "page",
+                                "once",
+                                "off",
+                                "on",
+                                "addSourceMiddleware",
+                                "addIntegrationMiddleware",
+                                "setAnonymousId",
+                                "addDestinationMiddleware",
+                            ];
+                            analytics.factory = function (e) {
+                                return function () {
+                                    var t =
+                                        Array.prototype.slice.call(arguments);
+                                    t.unshift(e);
+                                    analytics.push(t);
+                                    return analytics;
+                                };
+                            };
+                            for (var e = 0; e < analytics.methods.length; e++) {
+                                var key = analytics.methods[e];
+                                analytics[key] = analytics.factory(key);
+                            }
+                            analytics.load = function (key, e) {
+                                var t = document.createElement("script");
+                                t.type = "text/javascript";
+                                t.async = !0;
+                                t.src =
+                                    "https://cdn.segment.com/analytics.js/v1/" +
+                                    key +
+                                    "/analytics.min.js";
+                                var n =
+                                    document.getElementsByTagName("script")[0];
+                                n.parentNode.insertBefore(t, n);
+                                analytics._loadOptions = e;
+                            };
+                            analytics.SNIPPET_VERSION = "4.13.1";
+                            analytics.load("3cHlWjwEGL7unR570GHLj6wQBQtbyLTk");
+                            analytics.page();
+                        }
+                })();
             }
-        })()
-      }
-    </script>
-    <meta
-      name="google-site-verification"
-      content="AM76uKx2T0lzw7yUtGwpNmWBag6_y-yYGZBb3HzADHc"
-    />
-  </head>
-  <body>
-    <header id="header">
-      <a
-        href="https://www.github.com/chayev/yurl"
-        target="_blank"
-        rel="noopener"
-        title="Go to the GitHub project"
-        aria-label="Go to the GitHub project"
-        ><i class="fab fa-github"></i
-      ></a>
-    </header>
-    <main>
-      <div id="container">
-        <div id="info-container">
-          <h2>What is yURL?</h2>
-          <p>
-            yURL allows you to validate whether a URL is properly configured for
-            Universal Links and App Links.
-          </p>
-          <h2>Why use it?</h2>
-          <p>
-            yURL verifies if the <b>assetlinks.json</b> and
-            <span id="aasa"><b>apple-app-site-association</b></span> are
-            properly formatted for deep links as defined by Google and Apple.
-          </p>
-          <p>
-            Valid deep links enable users to be routed to specific app content.
-            This drives better user experience, better user engagement and
-            higher conversion rates.
-          </p>
-        </div>
-        <div id="form-container">
-          <div id="form-wrapper">
-            <img src="../static/img/yURL-logo.svg" alt="yURL Logo" />
-            <h2>yURL: Deep Link Validator</h2>
-            <form id="form" method="GET" action="/ios-results">
-              <div class="input-wrapper">
-                <label for="url">Enter URL</label>
-                <input
-                  id="url"
-                  type="text"
-                  name="url"
-                  placeholder="e.g. https://app.chayev.com/xyx"
-                  required
-                />
-              </div>
-              <div class="input-wrapper">
-                <div id="accordion">
-                  <div id="more">More Options</div>
-                  <div id="chevron">
-                    <img src="../static/img/chevron-down.svg" alt="chevron" />
-                  </div>
+        </script>
+        <meta
+            name="google-site-verification"
+            content="AM76uKx2T0lzw7yUtGwpNmWBag6_y-yYGZBb3HzADHc"
+        />
+    </head>
+    <body>
+        <header id="header">
+            <a
+                href="https://www.github.com/tkhoa2711/yurl"
+                target="_blank"
+                rel="noopener"
+                title="Go to the GitHub project"
+                aria-label="Go to the GitHub project"
+                ><i class="fab fa-github"></i
+            ></a>
+        </header>
+        <main>
+            <div id="container">
+                <div id="info-container">
+                    <h2>What is yURL?</h2>
+                    <p>
+                        yURL allows you to validate whether a URL is properly
+                        configured for Universal Links and App Links.
+                    </p>
+                    <h2>Why use it?</h2>
+                    <p>
+                        yURL verifies if the <b>assetlinks.json</b> and
+                        <span id="aasa"><b>apple-app-site-association</b></span>
+                        are properly formatted for deep links as defined by
+                        Google and Apple.
+                    </p>
+                    <p>
+                        Valid deep links enable users to be routed to specific
+                        app content. This drives better user experience, better
+                        user engagement and higher conversion rates.
+                    </p>
                 </div>
-                <div id="options">
-                  <label id="prefix-label" for="prefix">Apple App Prefix</label>
-                  <input id="prefix" type="text" name="prefix" />
-                  <label id="bundle-label" for="bundle"
-                    >Bundle Identifier</label
-                  >
-                  <input id="bundle" type="text" name="bundle" />
+                <div id="form-container">
+                    <div id="form-wrapper">
+                        <img
+                            src="../static/img/yURL-logo.svg"
+                            alt="yURL Logo"
+                        />
+                        <h2>yURL: Deep Link Validator</h2>
+                        <form id="form" method="GET" action="/ios-results">
+                            <div class="input-wrapper">
+                                <label for="url">Enter URL</label>
+                                <input
+                                    id="url"
+                                    type="text"
+                                    name="url"
+                                    placeholder="e.g. https://app.chayev.com/xyx"
+                                    required
+                                />
+                            </div>
+                            <div class="input-wrapper">
+                                <div id="accordion">
+                                    <div id="more">More Options</div>
+                                    <div id="chevron">
+                                        <img
+                                            src="../static/img/chevron-down.svg"
+                                            alt="chevron"
+                                        />
+                                    </div>
+                                </div>
+                                <div id="options">
+                                    <label id="prefix-label" for="prefix"
+                                        >Apple App Prefix</label
+                                    >
+                                    <input
+                                        id="prefix"
+                                        type="text"
+                                        name="prefix"
+                                    />
+                                    <label id="bundle-label" for="bundle"
+                                        >Bundle Identifier</label
+                                    >
+                                    <input
+                                        id="bundle"
+                                        type="text"
+                                        name="bundle"
+                                    />
+                                </div>
+                            </div>
+                            <div id="toggle-container">
+                                <div id="toggle-wrapper">
+                                    <div
+                                        class="toggle-labels"
+                                        id="toggle-label-left"
+                                    >
+                                        iOS
+                                    </div>
+                                    <input type="checkbox" id="switch" />
+                                    <label class="toggle" for="switch">
+                                        <span class="toggle-icon"></span>
+                                    </label>
+                                    <div
+                                        class="toggle-labels"
+                                        id="toggle-label-right"
+                                    >
+                                        Android
+                                    </div>
+                                </div>
+                            </div>
+                            <input
+                                id="submit-button"
+                                type="submit"
+                                value="Validate"
+                            />
+                        </form>
+                    </div>
                 </div>
-              </div>
-              <div id="toggle-container">
-                <div id="toggle-wrapper">
-                  <div class="toggle-labels" id="toggle-label-left">iOS</div>
-                  <input type="checkbox" id="switch" />
-                  <label class="toggle" for="switch">
-                    <span class="toggle-icon"></span>
-                  </label>
-                  <div class="toggle-labels" id="toggle-label-right">
-                    Android
-                  </div>
-                </div>
-              </div>
-              <input id="submit-button" type="submit" value="Validate" />
-            </form>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer>
-      © <span id="year">{{ .CurrentTime.Year }}</span>
-      <a
-        href="https://www.chayev.com"
-        target="_blank"
-        rel="noopener"
-        aria-label="Michael Ibragimchayev's Personal Site"
-        tabindex="-1"
-        >Michael Ibragimchayev</a
-      >
-    </footer>
-    <script>
-      let x = 1
-      const body = document.querySelector('body')
+            </div>
+        </main>
+        <footer>
+            © <span id="year">{{ .CurrentTime.Year }}</span>
+            <a
+                href="https://www.chayev.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Michael Ibragimchayev's Personal Site"
+                tabindex="-1"
+                >Michael Ibragimchayev</a
+            >
+        </footer>
+        <script>
+            let x = 1;
+            const body = document.querySelector("body");
 
-      const prefix = document.querySelector('#prefix-label')
-      const bundle = document.querySelector('#bundle-label')
+            const prefix = document.querySelector("#prefix-label");
+            const bundle = document.querySelector("#bundle-label");
 
-      document.getElementById('switch').onchange = function () {
-        x *= -1
-        if (x > 0) {
-          document.getElementById('form').action = '/ios-results'
-          body.style.backgroundColor = '#94d7f4'
-          prefix.textContent = 'Apple App Prefix'
-          bundle.textContent = 'Bundle Identifier'
-        } else {
-          document.getElementById('form').action = '/android-results'
-          body.style.backgroundColor = '#9fd1a4'
-          prefix.textContent = 'Package Name'
-          bundle.textContent = 'Package Fingerprint'
-        }
-      }
-      let y = -1
-      const options = document.querySelector('#options')
-      const moreOptions = document.querySelector('#more')
-      const chevron = document.querySelector('#chevron')
-      const accordion = document.querySelector('#accordion')
-      accordion.addEventListener('click', () => {
-        y *= -1
-        if (y > 0) {
-          options.style.display = 'flex'
-          more.textContent = 'Hide Options'
-          chevron.style.transform = 'rotate(180deg)'
-        } else {
-          options.style.display = 'none'
-          more.textContent = 'More Options'
-          chevron.style.transform = 'unset'
-        }
-      })
-    </script>
-  </body>
+            document.getElementById("switch").onchange = function () {
+                x *= -1;
+                if (x > 0) {
+                    document.getElementById("form").action = "/ios-results";
+                    body.style.backgroundColor = "#94d7f4";
+                    prefix.textContent = "Apple App Prefix";
+                    bundle.textContent = "Bundle Identifier";
+                } else {
+                    document.getElementById("form").action = "/android-results";
+                    body.style.backgroundColor = "#9fd1a4";
+                    prefix.textContent = "Package Name";
+                    bundle.textContent = "Package Fingerprint";
+                }
+            };
+            let y = -1;
+            const options = document.querySelector("#options");
+            const moreOptions = document.querySelector("#more");
+            const chevron = document.querySelector("#chevron");
+            const accordion = document.querySelector("#accordion");
+            accordion.addEventListener("click", () => {
+                y *= -1;
+                if (y > 0) {
+                    options.style.display = "flex";
+                    more.textContent = "Hide Options";
+                    chevron.style.transform = "rotate(180deg)";
+                } else {
+                    options.style.display = "none";
+                    more.textContent = "More Options";
+                    chevron.style.transform = "unset";
+                }
+            });
+        </script>
+    </body>
 </html>

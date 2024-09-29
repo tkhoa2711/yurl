@@ -19,7 +19,7 @@ brew install chayev/tap/yurl
 Run the below command:
 
 ```
-curl -sSL "https://github.com/chayev/yurl/releases/download/v0.7.3/yurl-v0.7.3-macos-amd64.tar.gz" | sudo tar -xz -C /usr/local/bin yurl
+curl -sSL "https://github.com/tkhoa2711/yurl/releases/download/v0.7.3/yurl-v0.7.3-macos-amd64.tar.gz" | sudo tar -xz -C /usr/local/bin yurl
 ```
 
 Note: You will be prompted to enter your password because of the `sudo` command. `0.7.3` may need to be replaced with your desired version.
@@ -31,7 +31,7 @@ Note: You will be prompted to enter your password because of the `sudo` command.
 Run the below command:
 
 ```
-curl -sSL "https://github.com/chayev/yurl/releases/download/v0.7.3/yurl-v0.7.3-linux-amd64.tar.gz" | sudo tar -xz -C /usr/local/bin yurl
+curl -sSL "https://github.com/tkhoa2711/yurl/releases/download/v0.7.3/yurl-v0.7.3-linux-amd64.tar.gz" | sudo tar -xz -C /usr/local/bin yurl
 ```
 
 Note: You will be prompted to enter your password because of the `sudo` command. `0.7.3` may need to be replaced with your desired version.
@@ -46,7 +46,7 @@ sudo snap install yurl
 
 ## Windows Install Instructions
 
-You could download the executable from the [releases](https://github.com/chayev/yurl/releases) page. More instructions coming soon!
+You could download the executable from the [releases](https://github.com/tkhoa2711/yurl/releases) page. More instructions coming soon!
 
 We are planning on supporting [chocolatey](chocolatey.org) package manager as well.
 
@@ -70,7 +70,7 @@ yurl assetlink validate suadeo.onelink.me
 
 ## Contributing
 
-Contributions to yURL of any kind are welcome! Feel free to open [PRs](https://github.com/chayev/yurl/pulls) or an [issue](https://github.com/chayev/yurl/pulls).
+Contributions to yURL of any kind are welcome! Feel free to open [PRs](https://github.com/tkhoa2711/yurl/pulls) or an [issue](https://github.com/tkhoa2711/yurl/pulls).
 
 ### Asking Support Questions
 
