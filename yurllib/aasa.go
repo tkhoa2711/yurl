@@ -4,8 +4,10 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"strings"
 
 	"go.mozilla.org/pkcs7"
@@ -127,6 +129,33 @@ func CheckAASADomain(inputURL string, bundleIdentifier string, teamIdentifier st
 	output = appendCDNDebugHeaders(output, cdnDebugHeaders)
 
 	return output
+}
+
+func CheckAASAFile(filePath string) (output []string, err error) {
+	f, err := os.Open(filePath)
+	if err != nil {
+		return output, err
+	}
+
+	fileContent, err := io.ReadAll(f)
+	if err != nil {
+		return output, err
+	}
+
+	// TODO
+	contentType := []string{"application/json"}
+	bundleIdentifier := ""
+	teamIdentifier := ""
+
+	output, errors := evaluateAASA(fileContent, contentType, bundleIdentifier, teamIdentifier, false)
+	if len(errors) > 0 {
+		output = append(output, fmt.Sprintln("\nErrors:"))
+		for _, e := range errors {
+			output = append(output, fmt.Sprintf("  - %s\n", e))
+		}
+	}
+
+	return output, err
 }
 
 func loadAASAContents(domain string) (*http.Response, []string, []error) {

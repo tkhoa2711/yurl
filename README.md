@@ -62,6 +62,10 @@ To validate the Apple App Site Association (AASA) file run the following:
 yurl aasa validate suadeo.onelink.me
 ```
 
+```bash
+yurl aasa check ./path/to/local/aasa/file
+```
+
 To validate the Android assetlinks.json file run the following:
 
 ```bash
