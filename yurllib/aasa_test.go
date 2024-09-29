@@ -54,21 +54,21 @@ func TestEvaluateAASA_Invalid(t *testing.T) {
 							"appID": "",
 						}
 					]
-				},
+				}
 			}
 			`),
 		},
 		{
-			name: "app_id-missing_dot",
+			name: "app_id-disallowed_characters",
 			fileContent: []byte(`
 			{
 				"applinks": {
 					"details": [
 						{
-							"appID": "nodotexpected"
+							"appIDs": ["a,b"]
 						}
 					]
-				},
+				}
 			}
 			`),
 		},
@@ -82,7 +82,7 @@ func TestEvaluateAASA_Invalid(t *testing.T) {
 							"appIDs": ["", "ABCDE12345.com.example.app"]
 						}
 					]
-				},
+				}
 			}
 			`),
 		},
